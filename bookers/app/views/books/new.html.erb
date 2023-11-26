@@ -1,2 +1,33 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<div>
+  <h1>New Book</h1>
+</div>
+
+<div class="new-book-form">
+  <%= form_with(model: @book, local: true) do |f| %>
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <div>
+          <%= f.label :title %>
+        </div>
+        <div class="mb-5">
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= f.label :body %>
+        </div>
+        <div class="mb-5">
+          <%= f.text_area :body, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- 他のフォームフィールドを追加 -->
+
+    <div class="text-center">
+      <%= f.submit "Create Book", class: "btn btn-outline-success" %>
+    </div>
+  <% end %>
+</div>
+

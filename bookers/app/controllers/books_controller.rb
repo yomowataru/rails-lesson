@@ -35,6 +35,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path, notice: '本は削除されました。'
   end
 
   private

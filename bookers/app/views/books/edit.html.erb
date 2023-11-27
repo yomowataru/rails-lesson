@@ -1,2 +1,43 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<div>
+  <h1>Book Edit</h1>
+</div>
+
+<% if @book.errors.any? %>
+<div class="alert alert-danger">
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="new-book-form">
+  <%= form_with(model: @book, local: true) do |f| %>
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <div>
+          <%= f.label :title %>
+        </div>
+        <div class="mb-5">
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= f.label :body %>
+        </div>
+        <div class="mb-5">
+          <%= f.text_area :body, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- 他のフォームフィールドを追加 -->
+
+    <div class="text-center">
+      <%= f.submit "Edit Book", class: "btn btn-outline-success" %>
+    </div>
+  <% end %>
+</div>

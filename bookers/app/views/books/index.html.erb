@@ -15,8 +15,11 @@
       <tr>
         <th scope="row"><%= book.id %></th>
         <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><%= link_to "Show", book_path(book) %></td>
+        <td><%= truncate(book.body, length: 20) %></td>
+        <td>
+          <%= link_to "Show", book_path(book), class: "mr-2" %>
+          <%= link_to "Edit", edit_book_path(book), class: "mr-2" %>
+        </td>
       </tr>
       <% end %>
     </tbody>

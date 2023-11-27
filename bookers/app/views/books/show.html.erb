@@ -1,2 +1,16 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1>Book Show</h1>
+
+<div class="card mx-auto" style="width: 18rem;">
+  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>
+  <div class="card-body">
+    <h5 class="card-title"><%= @book.title %></h5>
+    <p class="card-text"><%= @book.body %></p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <%= link_to "戻る", books_path, class: "btn btn-outline-success mr-2" %>
+  <%= link_to "編集", edit_book_path(@book), class: "btn btn-outline-success" %>
+</div>
+  
+

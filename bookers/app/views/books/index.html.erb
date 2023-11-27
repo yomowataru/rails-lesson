@@ -16,7 +16,7 @@
         <th scope="row"><%= book.id %></th>
         <td><%= book.title %></td>
         <td><%= book.body %></td>
-        <td></td>
+        <td><%= link_to "Show", book_path(book) %></td>
       </tr>
       <% end %>
     </tbody>
